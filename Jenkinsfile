@@ -11,6 +11,10 @@ pipeline{
             }
             steps {
                 sh 'mvn clean install'
+            }
+        }
+        stage ('Build and push'){
+            steps {
                 sh 'docker build -t hanzhukruslan/$JOB_NAME:$BUILD_NUMBER .'
                 sh 'docker push hanzhukruslan/$JOB_NAME:$BUILD_NUMBER'
                 sh 'docker rmi hanzhukruslan/$JOB_NAME:$BUILD_NUMBER'
