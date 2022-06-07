@@ -3,7 +3,7 @@ pipeline{
     stages{
         stage ('Check webhook'){
             steps {
-                println "Build works!"
+                println "Webhook works!"
             }
         }
     }
