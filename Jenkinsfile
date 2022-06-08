@@ -1,7 +1,7 @@
 pipeline{
     agent any
     stages{
-        stage ('Build jar and push image') {
+        stage ('Build jar') {
             agent {
                 docker {
                     image 'maven'
@@ -10,7 +10,7 @@ pipeline{
                 }
             }
             steps {
-                sh 'mvn clean install'
+                sh 'mvn clean install -Dmaven.test.skip=true'
             }
         }
         stage ('Build and push'){
