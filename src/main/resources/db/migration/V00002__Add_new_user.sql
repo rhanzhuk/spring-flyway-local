@@ -1,1 +1,0 @@
-INSERT INTO client VALUES (4, 'Test',00, '00000');
