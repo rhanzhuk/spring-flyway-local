@@ -22,7 +22,7 @@ pipeline{
         }
         stage ('Deploy'){
             steps {
-                sh 'ssh root@65.108.155.54 "kubectl set image -n flyway deployment/spring-flyway-local spring-flyway-local=hanzhukruslan/$JOB_NAME:$BUILD_NUMBER"'
+                sh 'ssh root@65.108.155.54 "kubectl set image -n default deployment/spring-flyway-local spring-flyway-local=hanzhukruslan/$JOB_NAME:$BUILD_NUMBER"'
             }
         }
     }
