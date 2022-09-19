@@ -20,6 +20,6 @@ EOF
 
 /app/vault agent -config /app/vault-agent.hcl
 VAULT_TOKEN=$(/app/vault unwrap -field=token $(jq -r '.token' /app/vault-token-via-agent))
-cat /app/vault-token-via-agent
+echo $VAULT_TOKEN
 #rm -f /app/vault-token-via-agent
 #exec /app/envconsul --no-prefix=true -once -vault-renew-token=false -vault-addr=${VAULT_ADDR} -vault-token=${VAULT_TOKEN} -secret secret/data/myapp/application.properties $@
