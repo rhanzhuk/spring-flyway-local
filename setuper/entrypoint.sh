@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 cat << EOF > /app/vault-agent.hcl
 exit_after_auth = true
 pid_file = "./pidfile"
