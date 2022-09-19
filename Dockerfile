@@ -8,6 +8,6 @@ COPY --from=vault-helper /app/vault /app/vault
 COPY --from=vault-helper /app/envconsul /app/envconsul
 COPY ./setuper/entrypoint.sh /app/entrypoint.sh
 COPY target/spring_flyway_local-0.0.1-SNAPSHOT.jar /app/spring_flyway_local-0.0.1-SNAPSHOT.jar
-ENTRYPOINT ["/app/entrypoint.sh"]
+ENTRYPOINT ["/bin/sh","-c","/app/entrypoint.sh"]
 CMD ["/bin/sh","-c","env"]
 #CMD ["java", "-jar", "spring_flyway_local-0.0.1-SNAPSHOT.jar"]
