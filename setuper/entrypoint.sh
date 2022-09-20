@@ -23,6 +23,7 @@ VAULT_TOKEN=$(/app/vault unwrap -field=token $(jq -r '.token' /app/vault-token-v
 echo $VAULT_TOKEN
 echo $VAULT_ADDR
 rm -f /app/vault-token-via-agent
-exec /app/envconsul --no-prefix=true -once -vault-renew-token=false -vault-addr=${VAULT_ADDR} -vault-token=${VAULT_TOKEN} -secret secret/data/myapp/application.properties "$@"
+/app/envconsul --no-prefix=true -once -vault-renew-token=false -vault-addr=${VAULT_ADDR} -vault-token=${VAULT_TOKEN} -secret secret/data/myapp/application.properties env
+#exec /app/envconsul --no-prefix=true -once -vault-renew-token=false -vault-addr=${VAULT_ADDR} -vault-token=${VAULT_TOKEN} -secret secret/data/myapp/application.properties "$@"
 #env
-#exec "$@"
+exec "$@"
