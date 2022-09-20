@@ -10,5 +10,5 @@ COPY ./setuper/entrypoint.sh /app/entrypoint.sh
 RUN chmod +x /app/entrypoint.sh
 COPY target/spring_flyway_local-0.0.1-SNAPSHOT.jar /app/spring_flyway_local-0.0.1-SNAPSHOT.jar
 ENTRYPOINT ["/app/entrypoint.sh"]
-CMD ["/bin/sh","-c", "sleep", "10m"]
+CMD ["sleep", "10m"]
 #CMD ["java", "-jar", "spring_flyway_local-0.0.1-SNAPSHOT.jar"]
