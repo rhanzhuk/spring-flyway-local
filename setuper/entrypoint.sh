@@ -25,3 +25,4 @@ echo $VAULT_ADDR
 rm -f /app/vault-token-via-agent
 #./app/envconsul --no-prefix=true -once -vault-renew-token=false -vault-addr=${VAULT_ADDR} -vault-token=${VAULT_TOKEN} -secret secret/data/myapp/application.properties
 #env
+exec "$@"
