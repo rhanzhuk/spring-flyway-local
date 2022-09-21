@@ -6,7 +6,7 @@ auto_auth {
    method "kubernetes" {
        mount_path = "auth/kubernetes"
        config = {
-           role = "test"
+           role = "example"
        }
    }
    sink "file" {
