@@ -18,7 +18,7 @@ auto_auth {
 }
 EOF
 
-/helper/vault agent -config /app/vault-agent.hcl
-VAULT_TOKEN=$(/helper/vault unwrap -field=token $(jq -r '.token' /app/vault-token-via-agent))
+/app/vault agent -config /app/vault-agent.hcl
+VAULT_TOKEN=$(/app/vault unwrap -field=token $(jq -r '.token' /app/vault-token-via-agent))
 rm -f /app/vault-token-via-agent
-exec /helper/envconsul --no-prefix=true -upcase -sanitize -once -vault-renew-token=false -vault-addr=${VAULT_ADDR} -vault-token=${VAULT_TOKEN} -secret secret/data/app-conf/spring-flyway-local/application.properties "$@"
+exec /app/envconsul --no-prefix=true -upcase -sanitize -once -vault-renew-token=false -vault-addr=${VAULT_ADDR} -vault-token=${VAULT_TOKEN} -secret secret/data/app-conf/spring-flyway-local/application.properties "$@"
