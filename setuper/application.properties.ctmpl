@@ -1,6 +1,0 @@
-{{ with secret "secret/data/spring-flyway-local/application.properties" }}
-    spring.datasource.url={{ index .Data.data "spring.datasource.url" }}
-    spring.datasource.username={{ index .Data.data "spring.datasource.username"  }}
-    spring.datasource.password={{ index .Data.data "spring.datasource.password" }}
-    spring.datasource.driver-class-name={{ index  .Data.data "spring.datasource.driver-class-name" }}
-{{ end }}
