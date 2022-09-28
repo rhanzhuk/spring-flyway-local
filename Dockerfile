@@ -1,5 +1,6 @@
 ######## STABLE VERSION #############
-FROM hanzhukruslan/openjdk16-vault:helper
+#FROM hanzhukruslan/openjdk16-vault:helper
+FROM gcr.io/distroless/java:11
 WORKDIR /app
 COPY ./setuper/entrypoint.sh /app/entrypoint.sh
 RUN chmod +x /app/entrypoint.sh
