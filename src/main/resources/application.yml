@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: ${SPRING_DATASOURCE_URL}
-    username: ${SPRING_DATASOURCE_USERNAME}
-    password: ${SPRING_DATASOURCE_PASSWORD}
-    driver-class-name: ${SPRING_DATASOURCE_DRIVER_CLASS_NAME}
+    url: jdbc:postgresql://65.108.155.54:31670/flydb_prod
+    username: pgroot
+    password: pg123
+    driver-class-name: org.postgresql.Driver
 server:
-  port: ${PORT}
+  port: 9999
