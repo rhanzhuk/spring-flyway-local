@@ -6,3 +6,8 @@ spring:
     driver-class-name: org.postgresql.Driver
 server:
   port: 9999
+sentry:
+  dsn: http://74d898eb9c6a43dd997d1ed38f239865@65.21.245.151:9000/2
+  # Set traces-sample-rate to 1.0 to capture 100% of transactions for performance monitoring.
+  # We recommend adjusting this value in production.
+  traces-sample-rate: 1.0
